@@ -1,0 +1,71 @@
+@use '../../../styles/mixins.scss';
+@use '../../../styles/variables.scss';
+
+.auth-navigation-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+    bottom: 50px;
+    left:35%;
+    font-size: 1em;
+
+    a {
+      text-decoration: none;
+      color: variables.$titleTextColor;
+    }
+
+    div {
+      padding: 5px 12px;
+      margin: 5px;
+      background-color: variables.$titleColor;
+      border-radius: 8px;
+
+      &:hover {
+        cursor: pointer;
+        outline: 2px solid variables.$titleTextColor;
+      }
+    }
+
+    @include mixins.mQ-phones(480px) {
+      position: relative;
+      order: 1;
+      top: 0;
+      left: 0;
+      font-size: 18px;
+      margin-top:40px; 
+      text-align: center;
+    }
+
+    @include mixins.mQ-other(481px,768px){
+      order: 1;
+      top: 0;
+      left: 0;
+      font-size: 20px;
+      margin-top:100px; 
+      text-align: center;
+    }
+
+    @include mixins.mQ-other(769px, 1699px){
+      left:0%;
+      right:50%;
+    }
+
+    @include mixins.mQ-largerDesktops(1700px) {
+      left:0%;
+      right:50%;
+    }
+}
+
+.sign-up-order{
+  flex-direction: column;
+  justify-content: center;
+
+  @include mixins.mQ-other(769px, 1699px){
+    flex-direction: row;
+  }
+
+  @include mixins.mQ-largerDesktops(1700px) {
+    flex-direction: row;
+  }
+}

@@ -1,0 +1,64 @@
+@use '../../../../../styles/mixins.scss';
+@use '../../../../../styles/variables.scss';
+
+.different-bet-stake {
+  padding: 5px;
+  border: 1px solid black;
+  font-size: 0.8em;
+  margin-top: 5px;
+  min-width: 60px;
+  max-width: 80px;
+  text-align: center;
+
+  @include mixins.mQ-phones(480px) {
+    @include mixins.participantSmallerName();
+    min-width: 40px;
+    max-width: 80px;
+  }
+}
+
+.amount-bet-different-stakes {
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  width: 300px;
+
+  @include mixins.mQ-phones(480px) {
+    width: 35vw;
+    margin-top: 10px;
+  }
+}
+
+.different-stakes-container {
+  display: flex;
+  width: variables.$betWidth;
+  justify-content: center;
+
+  @include mixins.mQ-phones(480px) {
+    width: variables.$betMobileWidth;
+  }
+  @include mixins.mQ-other(769px, 1699px) {
+    width: variables.$betMediumScreenWidth;
+  }
+
+  @include mixins.mQ-largerDesktops(1700px) {
+    width: variables.$betMediumScreenWidth;
+  }
+}
+
+.participant-different-multiple-stake {
+  display: flex;
+  position: relative;
+  bottom: 30px;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8em;
+
+  span {
+    padding: 1px 2px;
+    margin: 10px;
+    border: 1px solid black;
+    min-width: 50px;
+    text-align: center;
+  }
+}

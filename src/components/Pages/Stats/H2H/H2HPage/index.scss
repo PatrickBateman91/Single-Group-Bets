@@ -1,0 +1,184 @@
+@use '../../../../../styles/mixins.scss';
+@use '../../../../../styles/variables.scss';
+
+.h2h-container {
+  display: flex;
+  flex-direction: column;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.h2h-holder {
+  display: flex;
+  flex-direction: column;
+  min-width: 80vw;
+
+  @include mixins.mQ-other(481px, 768px) {
+    width: 90vw;
+  }
+}
+
+.h2h-title {
+  font-weight: bold;
+  font-size: 2em;
+  margin-bottom: 50px;
+  align-self: center;
+
+  @include mixins.mQ-phones(480px) {
+    margin-bottom: 20px;
+  }
+}
+
+.h2h-select-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.h2h-select-side {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+
+.h2h-select-item {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 50%;
+  font-size: 1.2em;
+
+  select {
+    min-width: 100px;
+    height: 50px;
+    padding: 5px 10px;
+    font-size: 1em;
+  }
+
+  @include mixins.mQ-phones(480px) {
+    flex-direction: column;
+  }
+
+  @include mixins.mQ-other(481px, 768px) {
+    flex-direction: column;
+  }
+}
+
+.h2h-picture-container {
+  display: flex;
+  justify-content: space-between;
+
+  @include mixins.mQ-phones(480px) {
+    width: 100vw;
+  }
+}
+
+.h2h-picture-side {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 50%;
+
+  @include mixins.mQ-phones(480px) {
+    .public-profile-picture-container {
+      img {
+        border: 3px ridge #961f44;
+        max-width: 45vw;
+        max-height: 45vw;
+      }
+    }
+  }
+}
+
+.h2h-body {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 50px;
+}
+
+.h2h-side-container {
+  display: flex;
+  flex-direction: column;
+  width: 33.3%;
+
+  &:nth-of-type(1) {
+    align-items: flex-end;
+  }
+
+  &:nth-of-type(2) {
+    align-items: center;
+  }
+
+  &:nth-of-type(3) {
+    align-items: flex-start;
+  }
+
+  @include mixins.mQ-phones(480px) {
+    &:nth-of-type(1) {
+      align-items: center;
+      width: 20%;
+    }
+
+    &:nth-of-type(2) {
+      align-items: center;
+      width: 50%;
+    }
+
+    &:nth-of-type(3) {
+      align-items: center;
+      width: 20%;
+    }
+  }
+
+  @include mixins.mQ-other(481px, 768px) {
+    &:nth-of-type(1) {
+      align-items: center;
+      width: 25%;
+    }
+
+    &:nth-of-type(2) {
+      align-items: center;
+      width: 40%;
+    }
+
+    &:nth-of-type(3) {
+      align-items: center;
+      width: 25%;
+    }
+  }
+
+  @include mixins.mQ-other(769px, 1699px) {
+    &:nth-of-type(1) {
+      width: 25%;
+    }
+
+    &:nth-of-type(2) {
+      width: 40%;
+    }
+
+    &:nth-of-type(3) {
+      width: 25%;
+    }
+  }
+
+  @include mixins.mQ-largerDesktops(1700px) {
+    &:nth-of-type(1) {
+      width: 25%;
+    }
+
+    &:nth-of-type(2) {
+      width: 40%;
+    }
+
+    &:nth-of-type(3) {
+      width: 25%;
+    }
+  }
+}
+
+.h2h-stat-item {
+  margin: 5px;
+}

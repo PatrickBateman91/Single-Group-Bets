@@ -1,0 +1,29 @@
+@use '../../../../styles/mixins.scss';
+@use '../../../../styles/variables.scss';
+@use '../shared.scss' as buttonGlobalShared;
+
+.neutral-button {
+  @include mixins.buttonBasic();
+  @include mixins.buttonSmall();
+  text-shadow: 1px 1px 1px #000;
+
+  button {
+    background-color: variables.$titleTextColor;
+    color: variables.$backgroundColor;
+    border: 1px solid white;
+  }
+
+  @media (hover: hover) {
+    button {
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+        transition: all ease-in-out 0.25s;
+      }
+    }
+  }
+
+  @include mixins.mQ-phones(480px) {
+    font-size: 0.8em;
+  }
+}

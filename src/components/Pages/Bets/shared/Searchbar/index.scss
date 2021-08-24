@@ -1,0 +1,14 @@
+@use '../../../../../styles/mixins.scss';
+@use '../../../../../styles/variables.scss';
+
+.search-input {
+  background-color: #e9fff8;
+  height: 30px;
+  &:focus {
+    border: 2px solid #82544e;
+  }
+  @include mixins.mQ-phones(480px) {
+    height: 35px;
+    padding: 5px;
+  }
+}

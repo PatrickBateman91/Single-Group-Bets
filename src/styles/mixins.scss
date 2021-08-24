@@ -1,0 +1,161 @@
+//Media queries
+@mixin mQ-phones($arg) {
+  @media screen and (max-width: $arg) {
+    @content;
+  }
+}
+
+@mixin mQ-other($min, $max) {
+  @media screen and (min-width: $min) and (max-width: $max) {
+    @content;
+  }
+}
+
+@mixin mQ-largerDesktops($min) {
+  @media screen and (min-width: $min) {
+    @content;
+  }
+}
+
+// Other
+@mixin modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 200;
+}
+
+@mixin buttonBasic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0px;
+
+  div,
+  a,
+  button {
+    display: flex;
+    border-radius: 20px;
+    border: 1.5px solid black;
+    text-decoration: none;
+  }
+
+  @media (hover: hover) {
+    button{
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+        transition: all ease-in-out 0.25s;
+      }
+    }
+  }
+}
+
+@mixin buttonSmall() {
+  a,
+  div,
+  button {
+    font-size: 12px;
+    padding: 3px 8px;
+  }
+
+  @include mQ-phones(480px) {
+    div,
+    a,
+    button {
+      font-size: 14px;
+    }
+  }
+
+  @include mQ-other(481px, 768px) {
+    div,
+    a,
+    button {
+      font-size: 14px;
+      padding: 4px 10px;
+    }
+  }
+
+  @include mQ-other(769px, 1699px){
+    div,
+    a,
+    button {
+      font-size: 16px;
+      padding: 7px 15px;
+    }
+}
+
+@include mQ-largerDesktops(1700px) {
+  div,
+  a,
+  button {
+    font-size: 16px;
+    padding: 7px 15px;
+  }
+}
+}
+
+@mixin buttonMedium() {
+  a,
+  div,
+  button {
+    font-size: 16px;
+    padding: 6px 15px;
+  }
+
+  @include mQ-phones(480px) {
+    div,
+    a,
+    button {
+      font-size: 22px;
+    }
+  }
+  @include mQ-other(481px, 768px) {
+    div,
+    a,
+    button {
+      font-size: 18px;
+      padding: 12px 20px;
+    }
+  }
+
+  @include mQ-other(769px, 1699px) {
+    div,
+    a,
+    button {
+      font-size: 20px;
+      padding: 18px 35px;
+    } 
+  }
+  @include mQ-largerDesktops(1700px) {
+    div,
+    a,
+    button {
+      font-size: 20px;
+      padding: 18px 35px;
+    } 
+  }
+}
+
+@mixin participantBiggerName() {
+  position: relative;
+  font-size: 14px;
+  padding: 5px 10px;
+}
+
+@mixin participantSmallerName() {
+  position: relative;
+  font-size: 11px;
+  padding: 4px 8px;
+}
+
+@mixin participantValue() {
+  padding: 5px;
+  min-width: 50px;
+  font-size: 14px;
+}

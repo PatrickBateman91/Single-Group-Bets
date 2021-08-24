@@ -1,0 +1,22 @@
+export const StatsTexts = {
+  activeNumberOfBets: 'Aktivne opklade',
+  bothLost: 'Oboje izgubili',
+  finishedNumberOfBets: 'Završene opklade',
+  h2hTitle: 'Head to head',
+  lostTogether: 'Zajedno izgubili',
+  moneyWon: 'Dobijene pare',
+  moneyLost: 'Izgubljene pare',
+  noActiveBets: 'Nema aktivnih opklada',
+  noFinishedBets: 'Nema završenih opklada',
+  numberOfActiveBets: 'Broj aktivnih opklada',
+  numberOfFinishedBets: 'Broj završenih opklada',
+  numberOfBetsDrawn: 'Nerješene opklade',
+  numberOfBetsLost: 'Izgubljene opklade',
+  numberOfBetsWon: 'Dobijene opklade',
+  otherProfiles: 'Pogledaj druge profile',
+  potentialWinnings: 'Potencijalni dobici',
+  potentialLosses: 'Potencijalni gubici',
+  totalBalance: 'Balans',
+  totalNumberOfBets: 'Ukupan broj opklada',
+  wonTogether: 'Zajedno dobili'
+};

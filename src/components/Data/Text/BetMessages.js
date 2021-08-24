@@ -1,0 +1,22 @@
+export const BetMessages = {
+  activeBets: 'Aktivne opklade',
+  addAnotherBet: 'Dodaj još jednu opkladu',
+  addNewBet: 'Dodaj novu opkladu',
+  betAddedSuccessfully: 'Opklada je uspješno dodana',
+  betEditedSuccessfully: 'Opklada je uspješno izmijenjena',
+  betFinishedSuccessfully: 'Opklada je uspješno završena',
+  betMarkedAsPayedSuccessfully: 'Opklada označena kao plaćena',
+  betJointBetValuesError: 'Obje strane moraju imati ispunjene vrijednosti!',
+  betJointBetEmptySideError: 'Obje strane moraju imati zastupnike',
+  betMoneyStakeError: 'Ulog mora biti ispunjen!',
+  betNoWinner: 'Bez pobjednika',
+  betParticipantError: 'Svi participanti moraju imati ispunjene vrijednosti!',
+  betPayed: 'Opklada je isplaćena',
+  betPayedQuestion: 'Opklada je isplaćena?',
+  betSubjectError: 'Opklada mora imati predmet/naslov!',
+  betTimeLimitError: 'Ako je vremenski ograničena opklada, mora biti uneseno do kada je ograničena!',
+  betUnauthorizedAdd: 'Samo bog opklada može dodati opkladu!',
+  finishedBets: 'Završene opklade',
+  noBetFound: 'Nijedna opklada nije pronađena',
+  whoWonQuestion: 'Ko je dobio opkladu?'
+};

@@ -1,0 +1,72 @@
+@use '../../../../../styles/mixins.scss';
+@use '../../../../../styles/variables.scss';
+
+#payed-bet-modal {
+  @include mixins.modal;
+
+  .payed-bet-holder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: variables.$beige;
+    width: 50%;
+    height: 50%;
+  }
+
+  .payed-bet-title {
+    font-size: 2em;
+    font-weight: bold;
+  }
+
+  .payed-bet-button-container {
+    margin-top: 50px;
+
+    button {
+      font-size: 1.5em;
+      padding: 5px 10px;
+      margin: 5px;
+
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  @include mixins.mQ-phones(480px) {
+    .payed-bet-holder {
+      width: 90vw;
+
+      .payed-bet-title {
+        font-size: 1.7em;
+      }
+    }
+  }
+
+  @include mixins.mQ-other(481px, 768px) {
+    .payed-bet-holder {
+      width: 80vw;
+    }
+  }
+}
+
+.payed-bet-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 20;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  label,
+  input {
+    font-size: 1.2em;
+    margin: 5px;
+    font-style: italic;
+  }
+  input {
+    width: 20px;
+    height: 20px;
+  }
+}

@@ -1,0 +1,191 @@
+@use '../../../../../styles/mixins.scss';
+@use '../../../../../styles/variables.scss';
+
+.edit-changes {
+  display: flex;
+  position: relative;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  width: 100%;
+  z-index: 100;
+  justify-content: flex-end;
+
+  .edit-change-item {
+    display: none;
+    font-family: 'Sen', sans-serif;
+    position: absolute;
+    flex-direction: column;
+    right: -295px;
+    top: -65px;
+    background-color: #e8e0d3;
+    border: 2px solid black;
+    border-radius: 5px;
+    width: 300px;
+    min-height: 150px;
+    -webkit-box-shadow: 10px 10px 31px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 31px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 31px 0px rgba(0, 0, 0, 0.75);
+
+    @media (hover: hover) {
+      &:hover {
+        display: flex;
+      }
+    }
+  }
+
+  .single-change-item {
+    display: flex;
+    justify-content: space-between;
+
+    span {
+      &:first-child {
+        margin-left: 10px;
+      }
+
+      &:last-child {
+        margin-right: 10px;
+      }
+
+      @include mixins.mQ-phones(480px) {
+        &:first-child {
+          margin-left: 4px;
+        }
+
+        &:last-child {
+          margin-right: 4px;
+        }
+      }
+    }
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  svg:hover + .edit-change-item {
+    font-family: 'Sen', sans-serif;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    right: -295px;
+    top: -65px;
+    background-color: #e8e0d3;
+    border: 2px solid black;
+    border-radius: 5px;
+    min-width: 300px;
+    min-height: 150px;
+    -webkit-box-shadow: 10px 10px 31px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 31px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 31px 0px rgba(0, 0, 0, 0.75);
+  }
+
+  @include mixins.mQ-phones(480px) {
+    min-width: 120px;
+
+    .edit-change-item {
+      min-width: 30vw;
+      min-height: 30vh;
+      right: 30px;
+      width: 70vw;
+    }
+
+    .change-title {
+      width: 100%;
+      font-size: 1.3em;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    svg:hover + .edit-change-item {
+      min-width: 100px;
+      min-height: 120px;
+      right: 30px;
+      width: 220px;
+    }
+
+    svg {
+      width: 30px !important;
+    }
+
+    .change-title {
+      font-weight: bold;
+      font-size: 1.5em;
+    }
+
+    .single-change-item {
+      font-size: 1em;
+    }
+  }
+
+  @include mixins.mQ-other(481px, 768px) {
+    min-width: 200px;
+
+    .edit-change-item {
+      min-width: 30vw;
+      min-height: 30vh;
+      width: 70vw;
+    }
+
+    .change-title {
+      width: 100%;
+      font-size: 1.3em;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    svg:hover + .edit-change-item {
+      min-width: 300px;
+      min-height: 200px;
+      right: 50px;
+      width: 220px;
+    }
+
+    svg {
+      width: 30px !important;
+    }
+
+    .change-title {
+      font-weight: bold;
+      font-size: 1.5em;
+    }
+
+    .single-change-item {
+      font-size: 1em;
+    }
+  }
+
+  @include mixins.mQ-other(769px, 1699px) {
+    .edit-change-item {
+      width: 450px;
+    }
+    .change-title {
+      margin: 10px 5px;
+      font-weight: bold;
+      font-size: 20px;
+      text-align: center;
+    }
+
+    svg:hover + .edit-change-item {
+      right: 50px;
+      top: 0px;
+    }
+  }
+
+  @include mixins.mQ-largerDesktops(1700px) {
+    .edit-change-item {
+      width: 500px;
+    }
+    .change-title {
+      margin: 10px 5px;
+      font-weight: bold;
+      font-size: 20px;
+      text-align: center;
+    }
+
+    svg:hover + .edit-change-item {
+      right: 50px;
+      top: 0px;
+    }
+  }
+}

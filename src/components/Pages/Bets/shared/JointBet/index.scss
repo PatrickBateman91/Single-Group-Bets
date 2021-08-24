@@ -1,0 +1,155 @@
+@use '../../../../../styles/variables.scss';
+@use '../../../../../styles/mixins.scss';
+@use '../../shared.scss' as betGlobalShared;
+@use '../shared.scss' as betComponentsShared;
+
+.joint-bet-answers-container {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 25px;
+  margin-bottom: 20px;
+
+  @include mixins.mQ-phones(480px) {
+    .participant-value {
+      align-items: flex-start;
+      max-width: 45%;
+    }
+  }
+}
+
+.joint-bet-holder {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.joint-display-side {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  width: 50%;
+}
+
+.joint-name-bet {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  a,
+  a:visited,
+  a:hover,
+  a:active {
+    color: inherit;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.joint-participant-name {
+  display: inline-block;
+  text-align: center;
+  width: 100px;
+  padding: 5px;
+  margin: 2px;
+  border: 1px solid black;
+  -webkit-box-shadow: 2px 2px 6px 1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 2px 2px 6px 1px rgba(0, 0, 0, 0.75);
+  box-shadow: 2px 2px 6px 1px rgba(0, 0, 0, 0.75);
+
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  @include mixins.mQ-phones(480px) {
+    font-size: 0.9em;
+    max-width: 80px;
+  }
+}
+
+.joint-bets-bet {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-size: 0.9em;
+  height: 35px;
+  min-width: 60px;
+  max-width: 100px;
+  padding: 2px 4px;
+  align-items: center;
+  border: 1px solid black;
+
+  @include mixins.mQ-phones(480px) {
+    @include mixins.participantSmallerName();
+    min-width: 30px;
+    max-width: 80px;
+  }
+}
+
+.bet-left {
+  margin-right: 50px;
+
+  @include mixins.mQ-phones(480px) {
+    margin-right: 5px;
+  }
+}
+
+.bet-right {
+  margin-left: 50px;
+
+  @include mixins.mQ-phones(480px) {
+    margin-left: 5px;
+  }
+}
+
+.joint-finished-winner-left {
+  position: absolute;
+  bottom: -20px;
+  left: 50px;
+  color: variables.$confirmationColor;
+  transform: scale(3);
+  @include mixins.mQ-phones(480px) {
+    transform: scale(2);
+    left: 10%;
+  }
+}
+
+.joint-finished-payed-left {
+  position: absolute;
+  bottom: -20px;
+  left: 70px;
+  color: variables.$confirmationColor;
+  transform: scale(3);
+  @include mixins.mQ-phones(480px) {
+    transform: scale(2);
+    left: 20%;
+  }
+}
+
+.joint-finished-winner-right {
+  position: absolute;
+  bottom: -20px;
+  right: 40px;
+  color: variables.$confirmationColor;
+  transform: scale(3);
+  @include mixins.mQ-phones(480px) {
+    right: 20%;
+    transform: scale(2);
+  }
+}
+
+.joint-finished-payed-right {
+  position: absolute;
+  bottom: -20px;
+  right: 20px;
+  color: variables.$confirmationColor;
+  transform: scale(3);
+  @include mixins.mQ-phones(480px) {
+    transform: scale(2);
+    right: 10%;
+  }
+}

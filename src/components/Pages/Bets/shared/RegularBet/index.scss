@@ -1,0 +1,18 @@
+@use '../../../../../styles/variables.scss';
+@use '../../../../../styles/mixins.scss';
+@use '../../shared.scss' as betGlobalShared;
+@use '../shared.scss' as betComponentsShared;
+
+.participant-holder {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  width: 100%;
+  margin-top: 10px;
+  min-height: 120px;
+  justify-content: space-between;
+
+  @include mixins.mQ-phones(480px) {
+    min-height: 80px;
+  }
+}

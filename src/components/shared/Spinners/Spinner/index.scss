@@ -1,0 +1,8 @@
+@use '../../../../styles/mixins.scss';
+@use '../../../../styles/variables.scss';
+
+.spinner-container {
+  min-height: 50vh;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}

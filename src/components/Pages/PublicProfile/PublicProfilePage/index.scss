@@ -1,0 +1,29 @@
+@use '../../../../styles/variables.scss';
+@use '../../../../styles/mixins.scss';
+
+.other-profiles-suggestions-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .other-profiles-title {
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+  }
+
+  .other-profiles-body {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 1.2em;
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+  @include mixins.mQ-phones(480px) {
+    .other-profiles-body {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+@use '../../../../styles/mixins.scss';
+@use '../../../../styles/variables.scss';
+@use '../shared.scss' as buttonGlobalShared;
+
+.confirm-button {
+  @include mixins.buttonBasic();
+  @include mixins.buttonMedium();
+  button {
+    background-color: variables.$titleColor;
+    color: variables.$titleTextColor;
+  }
+}

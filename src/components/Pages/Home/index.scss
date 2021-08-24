@@ -1,0 +1,57 @@
+@use '../../../styles//mixins.scss';
+@use '../../../styles//variables.scss';
+
+.front-menu-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+
+  .front-menu-item {
+    padding: 5px 20px 5px 20px;
+    border: 1px solid black;
+    width: 300px;
+    text-align: center;
+
+    &:hover {
+      cursor: pointer;
+      background-color: variables.$returnButtonColor;
+      color: white;
+    }
+  }
+
+  @include mixins.mQ-phones(480px) {
+    width: 80vw;
+    font-size: 20px;
+
+    .front-menu-item {
+      width: 100%;
+    }
+  }
+
+  @include mixins.mQ-other(481px, 768px) {
+    width: 60vw;
+    font-size: 20px;
+
+    .front-menu-item {
+      width: 100%;
+    }
+  }
+
+  @include mixins.mQ-other(769px, 1699px) {
+    width: 700px;
+    .front-menu-item {
+      font-size: 20px;
+      width: 500px;
+    }
+  }
+
+  @include mixins.mQ-largerDesktops(1700px) {
+    width: 700px;
+    .front-menu-item {
+      font-size: 20px;
+      width: 500px;
+    }
+  }
+}

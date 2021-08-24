@@ -1,0 +1,97 @@
+@use './variables.scss';
+@use './mixins.scss';
+
+.display-none {
+  display: none !important;
+}
+
+.display-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.bottom-line {
+  border-bottom: 1px solid black;
+  width: 300px;
+}
+
+.order-last {
+  order: 2;
+}
+
+.relative {
+  position: relative;
+}
+
+.green {
+  background-color: variables.$confirmationColor;
+}
+
+.red {
+  background-color: variables.$warningColor;
+}
+
+.green-text {
+  color: variables.$confirmationColor;
+}
+
+.red-text {
+  color: variables.$warningColor;
+}
+
+.green-border {
+  border: 2px solid variables.$confirmationColor;
+}
+
+.red-border {
+  border: 1px solid variables.$warningColor;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.give-space-medium {
+  padding: 20px 0px;
+}
+
+.error-message {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  color: red;
+  text-shadow: 1px 1px 1px #000;
+  font-size: 1.2em;
+
+  span {
+    text-align: center;
+  }
+  @include mixins.mQ-phones(480px) {
+    font-size: 18px;
+    margin: 5px 0px;
+  }
+}
+
+.success-message {
+  text-align: center;
+  margin-top: 20px;
+  color: variables.$confirmationColor;
+  text-shadow: 1px 1px 1px #000;
+  font-size: 1.2em;
+  @include mixins.mQ-phones(480px) {
+    font-size: 0.9em;
+  }
+}
+
+.visibility-none {
+  visibility: hidden;
+}

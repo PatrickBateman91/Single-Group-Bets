@@ -1,0 +1,611 @@
+@use '../../../../styles/mixins.scss';
+@use '../../../../styles/variables.scss';
+@use '../shared.scss' as betGlobalShared;
+
+.add-new-bet-container {
+  display: flex;
+  position: relative;
+  margin-top: 50px;
+  justify-content: center;
+
+  #addNewBet {
+    width: 80vw;
+  }
+
+  @include mixins.mQ-phones(480px) {
+    margin-top: 15px;
+    width: 100vw;
+
+    #addNewBet {
+      width: 100%;
+      margin: 0px 5px;
+    }
+  }
+
+  @include mixins.mQ-other(481px, 768px) {
+    #addNewBet {
+      width: 85vw;
+    }
+  }
+
+  @include mixins.mQ-other(769px, 1699px) {
+    width: 80vw;
+
+    #addNewBet {
+      width: 80%;
+    }
+  }
+
+  @include mixins.mQ-largerDesktops(1700px) {
+    width: 700px;
+
+    #addNewBet {
+      width: 100%;
+    }
+  }
+}
+
+.form-line-center {
+  display: flex;
+  position: relative;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 5px;
+
+  input {
+    height: 25px;
+  }
+
+  input:focus {
+    border: 2px solid variables.$titleTextColor;
+  }
+
+  @include mixins.mQ-phones(480px) {
+    width: 95vw;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    input {
+      width: 32%;
+      height: 30px;
+      padding: 5px;
+      margin: 2px;
+      font-size: 1em;
+    }
+  }
+
+  @include mixins.mQ-other(481px, 768px) {
+    input {
+      width: 32%;
+      height: 40px;
+      padding: 5px;
+      margin: 3px;
+    }
+  }
+
+  @include mixins.mQ-other(769px, 1699px) {
+    input {
+      width: 32%;
+      height: 40px;
+      padding: 5px;
+      margin: 3px;
+    }
+  }
+
+  @include mixins.mQ-largerDesktops(1700px) {
+    input {
+      width: 32%;
+      height: 40px;
+      padding: 5px;
+      margin: 3px;
+    }
+  }
+}
+
+.form-line-space {
+  display: flex;
+  position: relative;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+
+  #newBetSubject {
+    width: 250px;
+    margin-bottom: 20px;
+  }
+
+  input {
+    height: 25px;
+  }
+
+  input:focus {
+    border: 2px solid variables.$titleTextColor;
+  }
+
+  @include mixins.mQ-phones(480px) {
+    width: 100%;
+    flex-wrap: wrap;
+    font-size: 0.95em;
+    padding: 3px 3vw;
+    align-items: center;
+
+    label {
+      min-width: 40vw;
+    }
+
+    input[type='text'],
+    input[type='number'] {
+      width: 30vw;
+      height: 30px;
+      padding: 5px;
+    }
+
+    input[type='checkbox'] {
+      width: 20px;
+    }
+  }
+
+  @include mixins.mQ-other(481px, 768px) {
+    label {
+      min-width: 40vw;
+    }
+
+    input[type='text'],
+    input[type='number'] {
+      width: 30vw;
+      height: 40px;
+      padding: 5px;
+    }
+
+    input[type='checkbox'] {
+      width: 20px;
+    }
+  }
+
+  @include mixins.mQ-other(769px, 1699px) {
+    label {
+      min-width: 20vw;
+      font-size: 20px;
+    }
+
+    input[type='text'],
+    input[type='number'] {
+      width: 30vw;
+      height: 40px;
+      padding: 5px;
+    }
+
+    input[type='checkbox'] {
+      width: 20px;
+    }
+  }
+
+  @include mixins.mQ-largerDesktops(1700px) {
+    label {
+      min-width: 250px;
+      font-size: 20px;
+    }
+
+    input[type='text'],
+    input[type='number'] {
+      width: 300px;
+      height: 40px;
+      padding: 5px;
+    }
+
+    input[type='checkbox'] {
+      width: 20px;
+    }
+  }
+}
+
+.joint-bet-container {
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid black;
+
+  @include mixins.mQ-other(481px, 768px) {
+    width: 85vw;
+  }
+}
+
+.input-joint-side {
+  width: 50%;
+  margin-top: 10px;
+
+  #joint-left-side-input1,
+  #joint-right-side-input2 {
+    margin: 10px;
+    width: 70%;
+  }
+
+  #joint-left-side-input2,
+  #joint-right-side-input1 {
+    width: 25%;
+    margin: 5px;
+  }
+
+  @include mixins.mQ-phones(360px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &:last-of-type {
+      flex-direction: column-reverse;
+    }
+    #joint-left-side-input1,
+    #joint-right-side-input2 {
+      width: 45vw;
+      margin: 5px 2px;
+      font-size: 16px;
+      padding: 3px;
+    }
+
+    #joint-left-side-input2,
+    #joint-right-side-input1 {
+      width: 45vw;
+      margin: 5px 2px;
+      font-size: 16px;
+      padding: 3px;
+    }
+
+    input::placeholder {
+      color: #5b5b5b !important;
+      text-align: center;
+    }
+  }
+
+  @include mixins.mQ-other(361px, 480px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &:last-of-type {
+      flex-direction: column-reverse;
+    }
+    #joint-left-side-input1,
+    #joint-right-side-input2 {
+      width: 45vw;
+      margin: 5px 2px;
+      font-size: 16px;
+      padding: 3px;
+    }
+
+    #joint-left-side-input2,
+    #joint-right-side-input1 {
+      width: 45vw;
+      margin: 5px 2px;
+      font-size: 16px;
+      padding: 3px;
+    }
+
+    input::placeholder {
+      color: #5b5b5b !important;
+      text-align: center;
+    }
+  }
+
+  @include mixins.mQ-other(481px, 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &:last-of-type {
+      flex-direction: column-reverse;
+    }
+    #joint-left-side-input1,
+    #joint-right-side-input2 {
+      width: 80%;
+      height: 40px;
+      margin: 5px 2px;
+      font-size: 16px;
+      padding: 3px;
+    }
+
+    #joint-left-side-input2,
+    #joint-right-side-input1 {
+      width: 80%;
+      height: 40px;
+      margin: 5px 2px;
+      font-size: 16px;
+      padding: 3px;
+    }
+  }
+
+  @include mixins.mQ-other(769px, 1699px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &:last-of-type {
+      flex-direction: column-reverse;
+    }
+    #joint-left-side-input1,
+    #joint-right-side-input2 {
+      width: 80%;
+      height: 40px;
+      margin: 5px 2px;
+      font-size: 16px;
+      padding: 3px;
+    }
+
+    #joint-left-side-input2,
+    #joint-right-side-input1 {
+      width: 80%;
+      height: 40px;
+      margin: 5px 2px;
+      font-size: 16px;
+      padding: 3px;
+    }
+  }
+
+  @include mixins.mQ-largerDesktops(1700px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &:last-of-type {
+      flex-direction: column-reverse;
+    }
+    #joint-left-side-input1,
+    #joint-right-side-input2 {
+      width: 80%;
+      height: 40px;
+      margin: 5px 2px;
+      font-size: 16px;
+      padding: 3px;
+    }
+
+    #joint-left-side-input2,
+    #joint-right-side-input1 {
+      width: 80%;
+      height: 40px;
+      margin: 5px 2px;
+      font-size: 16px;
+      padding: 3px;
+    }
+  }
+}
+
+.joint-bet-inputs-container {
+  display: flex;
+  width: 500px;
+
+  ::placeholder {
+    font-weight: bold;
+    color: #000;
+    font-size: 0.85em;
+    padding-left: 5px;
+  }
+
+  @include mixins.mQ-phones(480px) {
+    width: 98vw;
+    margin: 0 auto;
+
+    ::placeholder {
+      font-size: 0.7em;
+    }
+  }
+
+  @include mixins.mQ-other(481px, 768px) {
+    width: 85vw;
+  }
+
+  @include mixins.mQ-other(769px, 1699px) {
+    width: 100%;
+  }
+
+  @include mixins.mQ-largerDesktops(1700px) {
+    width: 100%;
+  }
+}
+
+.removeAdditionalClause {
+  position: absolute;
+  z-index: 100;
+  font-size: 0.8em;
+  right: -10px;
+  top: -10px;
+  &:hover {
+    cursor: pointer;
+    color: variables.$titleTextColor;
+  }
+
+  @include mixins.mQ-phones(480px) {
+    top: -7px;
+    right: 0px;
+    font-size: 1em;
+  }
+
+  @include mixins.mQ-other(769px, 1699px) {
+    font-size: 18px;
+    top: -18px;
+    right: -15px;
+  }
+
+  @include mixins.mQ-largerDesktops(1700px) {
+    font-size: 18px;
+    top: -18px;
+    right: -15px;
+  }
+}
+
+.removeAdditionalParticipant {
+  position: absolute;
+  z-index: 100;
+  font-size: 0.8em;
+  right: -10px;
+  top: -10px;
+  &:hover {
+    cursor: pointer;
+    color: variables.$titleTextColor;
+  }
+
+  @include mixins.mQ-phones(480px) {
+    top: -20px;
+    right: -2px;
+    font-size: 1em;
+  }
+
+  @include mixins.mQ-other(769px, 1699px) {
+    font-size: 18px;
+    top: -15px;
+  }
+
+  @include mixins.mQ-largerDesktops(1700px) {
+    font-size: 18px;
+    top: -15px;
+  }
+}
+
+.joint-bet-names-suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 500px;
+
+  @include mixins.mQ-other(769px, 1699px) {
+    max-width: 700px;
+  }
+
+  @include mixins.mQ-largerDesktops(1700px) {
+    max-width: 700px;
+  }
+}
+
+.add-new-person-joint-bet {
+  background-color: variables.$titleTextColor;
+  border: 1px solid variables.$titleColor;
+  color: white;
+  font-size: 0.8em;
+  padding: 3px;
+  margin-left: 5px;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    outline: 2px solid variables.$titleColor;
+  }
+}
+
+.selected-person {
+  background-color: variables.$confirmationColor;
+  color: whitesmoke;
+  text-shadow: 2px 1px 1px #000;
+}
+
+.bet-subject {
+  margin-bottom: 20px;
+  label {
+    width: 30%;
+  }
+  input[type='text'] {
+    width: 70%;
+    padding: 5px 10px;
+  }
+
+  @include mixins.mQ-phones(768px) {
+    flex-direction: column;
+    label {
+      width: 80%;
+    }
+    input[type='text'] {
+      width: 100%;
+      height: 50px;
+    }
+  }
+
+  @include mixins.mQ-other(769px, 1699px) {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    label {
+      font-size: 20px;
+    }
+
+    input {
+      height: 40px;
+    }
+  }
+
+  @include mixins.mQ-largerDesktops(1700px) {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    label {
+      font-size: 20px;
+    }
+
+    input {
+      height: 40px;
+    }
+  }
+}
+
+.add-new-bet-submit-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.new-person-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  input {
+    margin-right: 10px;
+  }
+
+  @include mixins.mQ-phones(480px) {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    input {
+      width: 60vw !important;
+    }
+  }
+
+  @include mixins.mQ-other(769px, 1699px) {
+  }
+
+  @include mixins.mQ-largerDesktops(1700px) {
+  }
+}
+
+.different-bet-legend {
+  display: flex;
+  align-items: center;
+  font-size: 0.8em;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-style: italic;
+
+  svg {
+    margin-left: 5px;
+  }
+
+  span {
+    margin-top: 5px;
+    margin-left: 7px;
+  }
+
+  @include mixins.mQ-phones(480px) {
+    span {
+      margin-top: 3px;
+    }
+  }
+}
+
+.between-who-container {
+  @include mixins.mQ-other(769px, 1699px) {
+    font-size: 20px;
+  }
+
+  @include mixins.mQ-largerDesktops(1700px) {
+    font-size: 20px;
+  }
+}

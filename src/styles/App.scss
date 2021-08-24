@@ -1,0 +1,38 @@
+@use './variables.scss';
+@use './mixins.scss';
+@use './common.scss';
+@use './personal.scss';
+@use './shared.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-weight: bold;
+  font-family: "Gotu", sans-serif;
+  overflow-x: hidden;
+  background-color: variables.$backgroundColor;
+  word-break: break-word;
+}
+
+input {
+  border: 1px solid black;
+
+  &:focus {
+    border: 2px solid black;
+  }
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}

@@ -1,0 +1,46 @@
+@use '../../../../styles/variables.scss';
+@use '../../../../styles/mixins.scss';
+@use '../shared.scss' as betGlobalShared;
+
+.legend-finished-bets {
+  width: 500px;
+  font-size: 0.7em;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  padding: 6px;
+  border-bottom: 3px dashed black;
+
+  div svg {
+    color: variables.$confirmationColor;
+    transform: scale(2);
+  }
+  div span {
+    margin-right: 10px;
+  }
+
+  @include mixins.mQ-phones(480px) {
+    flex-direction: column;
+    align-items: center;
+    width: 95vw;
+    font-size: 1em;
+  }
+
+  @include mixins.mQ-other(481px, 768px) {
+    width: 85vw;
+    font-size: 15px;
+  }
+
+  @include mixins.mQ-other(769px, 1699px) {
+    margin-top: 50px;
+    font-size: 20px;
+    width: variables.$betMediumScreenWidth;
+  }
+
+  @include mixins.mQ-largerDesktops(1700px) {
+    margin-top: 50px;
+    font-size: 20px;
+    width: variables.$betMediumScreenWidth;
+  }
+}

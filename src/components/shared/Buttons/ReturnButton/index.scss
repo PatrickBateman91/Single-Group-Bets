@@ -1,0 +1,12 @@
+@use '../../../../styles/mixins.scss';
+@use '../../../../styles/variables.scss';
+@use '../shared.scss' as buttonGlobalShared;
+
+.return-button {
+  @include mixins.buttonBasic();
+  @include mixins.buttonSmall();
+  a {
+    background-color: variables.$returnButtonColor;
+    color: white;
+  }
+}

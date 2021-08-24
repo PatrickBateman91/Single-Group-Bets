@@ -1,0 +1,52 @@
+@use './variables.scss';
+
+.zena {
+    background-color: variables.$ZeninaBoja;
+    color: variables.$ZeninaBojaTeksta;
+    text-shadow: 1px 1px 1px #000;
+  }
+  
+  .amko {
+    background-color: variables.$AmkovaBoja;
+    color: variables.$AmkovaBojaTeksta;
+  }
+  
+  .zlaja {
+    background-color: variables.$ZlajinaBoja;
+    color: variables.$ZeninaBojaTeksta;
+    text-shadow: 1px 1px 1px #000;
+  }
+  
+  .spaha {
+    background-color: variables.$SpahinaBoja;
+    color: variables.$SpahinaBojaTeksta;
+  }
+  
+  .tijana {
+    background-color: variables.$TijaninaBoja;
+  }
+  
+  .tare {
+    background-color: variables.$TaretovaBoja;
+    color: white;
+    text-shadow: 2px 1px 1px #000;
+  }
+  
+  .niho {
+    background-color: variables.$NihinaBoja;
+    color: variables.$NihinaBojaTeksta;
+  }
+  
+  .izo {
+    background-color: variables.$IzinaBoja;
+    color: variables.$IzinaBojaTeksta;
+    text-shadow: 3px 3px 4px #e63717;
+  }
+  
+  .dino {
+    background-color: variables.$DininaBoja;
+  }
+  
+  .selva {
+    background-color: variables.$AmkovaBojaTeksta;
+  }

@@ -1,0 +1,65 @@
+@use '../../../../styles/mixins.scss';
+@use '../../../../styles/variables.scss';
+@use '../shared.scss' as globalAuthShared;
+
+.change-profile-holder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  padding-top: 10vh;
+  padding-bottom: 5vh;
+
+  .change-profile-form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 50vw;
+    padding: 30px;
+    height: 60vh;
+    background-color: variables.$beige;
+    border-radius: 10px;
+    border: 5px solid black;
+    -webkit-box-shadow: 0px 3px 8px 1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 3px 8px 1px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 3px 8px 1px rgba(0, 0, 0, 0.75);
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    input {
+      margin-bottom: 50px;
+    }
+  }
+
+  @include mixins.mQ-phones(480px) {
+    padding-top: 5vh;
+    span {
+      font-size: 1.3em;
+    }
+
+    .change-profile-form-container {
+      background-image: none;
+      background-color: variables.$backgroundColor;
+      width: 100vw;
+      border: none;
+      border-radius: 0px;
+      box-shadow: none;
+    }
+  }
+
+  @include mixins.mQ-other(481px, 768px) {
+    .change-profile-form-container {
+      width: 90vw;
+    }
+  }
+
+  @include mixins.mQ-largerDesktops(2299px) {
+    height: 70vh;
+  }
+}

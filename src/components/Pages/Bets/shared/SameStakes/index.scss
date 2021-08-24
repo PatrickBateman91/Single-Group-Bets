@@ -1,0 +1,58 @@
+@use '../../../../../styles/variables.scss';
+@use '../../../../../styles/mixins.scss';
+
+.amount-bet-more-participants {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: -7px;
+  width: 100%;
+  margin: variables.$betBodyMargin;
+  span {
+    display: inline-block;
+    border: 1px solid black;
+    padding: 2px 15px;
+  }
+
+  img {
+    object-fit: contain;
+    width: 150px;
+    max-height: 100px;
+  }
+
+  @include mixins.mQ-other(361px, 480px) {
+    top: -7px;
+    margin-top: 10px;
+    font-size: 0.8em;
+    img {
+      width: 120px;
+    }
+  }
+}
+
+.amount-bet-two-participants {
+  min-width: 100px;
+  max-width: 30%;
+  text-align: center;
+  padding: 2px 10px;
+  margin: variables.$betBodyMargin;
+  div {
+    border: 1px solid black;
+    font-size: 0.8em;
+    padding: 5px;
+  }
+
+  img {
+    object-fit: contain;
+    width: 100%;
+    max-height: 100px;
+  }
+
+  @include mixins.mQ-phones(480px) {
+    max-width: 40%;
+    span {
+      position: relative;
+      @include mixins.participantBiggerName();
+    }
+  }
+}

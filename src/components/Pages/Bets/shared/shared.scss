@@ -1,0 +1,336 @@
+@use '../../../../styles/mixins.scss';
+@use '../../../../styles/variables.scss';
+
+.single-bet-container {
+  position: relative;
+  width: variables.$betWidth;
+  margin-top: 30px;
+  padding-bottom: 10px;
+  border: 3px solid black;
+  -moz-box-shadow: 5px 0px 7px rgba(33, 33, 33, 1);
+  -webkit-box-shadow: 5px 0px 7px rgba(33, 33, 33, 0.7);
+  box-shadow: 5px 0px 7px rgba(33, 33, 33, 0.7);
+  &:hover {
+    -webkit-box-shadow: 10px 0px 31px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 0px 31px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 0px 31px 0px rgba(0, 0, 0, 0.75);
+  }
+
+  @include mixins.mQ-phones(480px) {
+    width: variables.$betMobileWidth;
+    font-size: 0.8em;
+  }
+
+  @include mixins.mQ-other(769px, 1699px) {
+    width: variables.$betMediumScreenWidth;
+    max-width: 80vw;
+    font-size: 1.1em;
+  }
+
+  @include mixins.mQ-largerDesktops(1700px) {
+    width: variables.$betMediumScreenWidth;
+    max-width: 80vw;
+    font-size: 1.1em;
+  }
+}
+
+.additional-clauses-container {
+  width: 100%;
+  font-size: 0.7em;
+  padding: 2px;
+
+  span {
+    margin-left: 10px;
+  }
+
+  @include mixins.mQ-phones(480px) {
+    margin-left: 5px;
+    span {
+      margin-left: 5px;
+    }
+  }
+
+  @include mixins.mQ-other(481px, 768px) {
+    margin-left: 5px;
+    font-size: 1em;
+  }
+
+  @include mixins.mQ-other(769px, 1699px) {
+    svg {
+      margin-left: 10px;
+    }
+    span {
+      font-size: 16px;
+    }
+  }
+
+  @include mixins.mQ-largerDesktops(1700px) {
+    svg {
+      margin-left: 10px;
+    }
+    span {
+      font-size: 16px;
+    }
+  }
+}
+
+.participant-value {
+  display: flex;
+  justify-content: center;
+  font-size: 1em;
+  margin-bottom: 30px;
+
+  span {
+    @include mixins.participantValue();
+    border: 1px solid black;
+    text-align: center;
+    background-color: white;
+    -webkit-box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.75);
+    box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.75);
+  }
+
+  @include mixins.mQ-phones(480px) {
+    font-size: 0.65em;
+    margin-bottom: 10px;
+  }
+
+  @include mixins.mQ-other(320px, 650px) {
+    margin-bottom: 5px;
+  }
+  @include mixins.mQ-other(769px, 1699px) {
+    span {
+      margin-top: 20px;
+      font-size: 20px;
+    }
+  }
+
+  @include mixins.mQ-largerDesktops(1700px) {
+    span {
+      margin-top: 20px;
+      font-size: 20px;
+    }
+  }
+}
+
+.participant-row {
+  position: relative;
+  width: 25%;
+  margin: 5px;
+  a,
+  a:visited,
+  a:hover,
+  a:active {
+    color: inherit;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  @include mixins.mQ-phones(480px) {
+    font-size: 1.5em;
+  }
+}
+
+.participant-name {
+  position: relative;
+  text-align: center;
+  padding: 5px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  border: 1px solid black;
+  -webkit-box-shadow: 2px 2px 6px 1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 2px 2px 6px 1px rgba(0, 0, 0, 0.75);
+  box-shadow: 2px 2px 6px 1px rgba(0, 0, 0, 0.75);
+
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  @include mixins.mQ-phones(480px) {
+    margin-bottom: 7px;
+    font-size: 0.7em;
+    padding: 3px;
+  }
+}
+
+.show-hide-duration {
+  display: none;
+  position: absolute;
+  right: 20px;
+}
+
+.clock-holder {
+  width: 100%;
+  position: relative;
+  text-align: right;
+
+  svg:hover ~ div {
+    display: inline-block;
+  }
+
+  svg:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+  }
+
+  @include mixins.mQ-phones(480px) {
+    top: 1px;
+    right: 10px;
+    font-size: 14px;
+    margin: 5px;
+  }
+}
+
+.bet-title {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  border: 1px solid black;
+  margin-bottom: 10px;
+  background-color: variables.$titleColor;
+  -webkit-box-shadow: 4px 4px 15px 1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 4px 4px 15px 1px rgba(0, 0, 0, 0.75);
+  box-shadow: 4px 4px 15px 1px rgba(0, 0, 0, 0.75);
+
+  @include mixins.mQ-phones(480px) {
+    padding: 5px;
+    margin-bottom: 6px;
+    -webkit-box-shadow: 2px 2px 7px 1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 2px 2px 7px 1px rgba(0, 0, 0, 0.75);
+    box-shadow: 2px 2px 7px 1px rgba(0, 0, 0, 0.75);
+
+    span {
+      font-size: 0.9em;
+    }
+  }
+}
+
+.no-winner {
+  text-decoration: underline;
+  font-size: 1.2em;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.3);
+  }
+}
+
+.winner-marked {
+  border: 2px solid red;
+  transform: scale(1.1);
+}
+
+.winner-check {
+  position: absolute;
+  color: variables.$confirmationColor;
+  left: 110px;
+  z-index: 30;
+  top: 5px;
+  transform: scale(3);
+  @include mixins.mQ-phones(480px) {
+    left: 40%;
+    top: 25px;
+    transform: scale(1.8);
+  }
+
+  @include mixins.mQ-other(481px, 768px) {
+    left: 40%;
+    top: 40px;
+    transform: scale(3);
+  }
+
+  @include mixins.mQ-other(769px, 1699px) {
+    left: 42.5%;
+    top: 40px;
+    transform: scale(3);
+  }
+
+  @include mixins.mQ-largerDesktops(1700px) {
+    left: 42.5%;
+    top: 40px;
+    transform: scale(3);
+  }
+}
+
+.winner-payed {
+  position: absolute;
+  color: variables.$confirmationColor;
+  left: 130px;
+  top: 5px;
+  z-index: 31;
+  transform: scale(3);
+
+  @include mixins.mQ-phones(480px) {
+    left: 60%;
+    top: 25px;
+    transform: scale(1.8);
+  }
+
+  @include mixins.mQ-other(481px, 768px) {
+    left: 60%;
+    top: 40px;
+    transform: scale(3);
+  }
+  @include mixins.mQ-other(769px, 1699px) {
+    left: 55%;
+    top: 40px;
+    transform: scale(3);
+  }
+
+  @include mixins.mQ-largerDesktops(1700px) {
+    left: 55%;
+    top: 40px;
+    transform: scale(3);
+  }
+}
+
+.no-winner-check {
+  position: absolute;
+  top: 0px;
+  right: -40px;
+  font-size: 0.8em;
+  z-index: 30;
+  background-color: variables.$warningColor;
+  padding: 5px 10px;
+  border-radius: 12px;
+  transform: rotate(40deg);
+
+  @include mixins.mQ-phones(480px) {
+    font-size: 1em;
+    right: -30px;
+    top: 0px;
+  }
+}
+
+.action-icon-container {
+  display: flex;
+  align-items: center;
+  border-bottom: 3px dashed black;
+  height: 80px;
+  width: variables.$betWidth;
+
+  svg {
+    font-size: 1.5em;
+
+    @media (hover: hover) {
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  @include mixins.mQ-phones(480px) {
+    width: variables.$betMobileWidth;
+    height: 60px;
+    svg {
+      font-size: 1.25em;
+    }
+  }
+}

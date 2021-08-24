@@ -1,0 +1,133 @@
+@use '../../../styles/variables.scss';
+@use '../../../styles/mixins.scss';
+
+.auth-form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+
+  .auth-main-title {
+    font-size: 2.5em;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  @include mixins.mQ-phones(480px) {
+    width: 100vw;
+    min-height: 90vh;
+
+    .auth-main-title {
+      font-size: 2em;
+    }
+  }
+}
+
+.auth-form-holder {
+  flex-direction: column;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: variables.$backgroundColor;
+  width: 500px;
+  border: 1px solid black;
+
+  @include mixins.mQ-phones(480px) {
+    width: 100vw;
+    border: none;
+  }
+
+  @include mixins.mQ-other(481px, 768px) {
+    width: 80vw;
+  }
+
+  @include mixins.mQ-other(769px, 1699px) {
+    width: 700px;
+  }
+
+  @include mixins.mQ-largerDesktops(1700px) {
+    width: 700px;
+  }
+}
+
+.auth-line {
+  width: 300px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+
+  label {
+    align-self: flex-start;
+  }
+
+  input {
+    border: 1px solid black !important;
+
+    &:focus {
+      border: 2px solid black !important;
+    }
+  }
+
+  @include mixins.mQ-phones(480px) {
+    flex-direction: column;
+    width: 80vw;
+    label {
+      text-align: center;
+      font-size: 22px;
+    }
+    input {
+      height: 40px;
+      padding: 10px 5px;
+    }
+  }
+
+  @include mixins.mQ-other(481px, 768px) {
+    align-items: center;
+    width: 60vw;
+    label {
+      font-size: 20px;
+      // Align center doesn't work for some reason so margin added
+      margin-top: 10px;
+    }
+
+    input {
+      height: 50px;
+      padding: 10px 5px;
+      width: 60%;
+    }
+  }
+
+  @include mixins.mQ-other(769px, 1699px) {
+    width: 500px;
+    label {
+      font-size: 20px;
+      // Align center doesn't work for some reason so margin added
+      margin-top: 10px;
+    }
+
+    input {
+      height: 40px;
+      width: 60%;
+    }
+  }
+
+  @include mixins.mQ-largerDesktops(1700px) {
+    width: 500px;
+    label {
+      font-size: 20px;
+      // Align center doesn't work for some reason so margin added
+      margin-top: 10px;
+    }
+
+    input {
+      height: 40px;
+      width: 60%;
+    }
+  }
+}

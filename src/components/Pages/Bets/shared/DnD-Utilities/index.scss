@@ -1,0 +1,101 @@
+@use '../../../../../styles/variables.scss';
+@use '../../../../../styles/mixins.scss';
+@use '../../shared.scss' as betGlobalShared;
+
+.joint-side {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 50%;
+  min-height: 100px;
+
+  &:first-child {
+    border-right: 2px solid black;
+  }
+
+  @include mixins.mQ-phones(480px) {
+    min-height: 150px;
+  }
+
+  @include mixins.mQ-other(481px, 768px) {
+    min-height: 200px;
+  }
+
+  @include mixins.mQ-other(769px, 1699px) {
+    min-height: 250px;
+  }
+
+  @include mixins.mQ-largerDesktops(1700px) {
+    min-height: 250px;
+  }
+}
+
+.delete-joint-participant {
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  &:hover {
+    color: variables.$titleTextColor;
+    cursor: pointer;
+  }
+
+  @include mixins.mQ-other(769px, 1699px) {
+    top: -15px;
+    right: -15px;
+  }
+
+  @include mixins.mQ-largerDesktops(1700px) {
+    top: -15px;
+    right: -15px;
+  }
+}
+
+.joint-not-chosen {
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  font-size: 0.9em;
+  margin: 5px;
+  padding: 2px 4px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: variables.$confirmationColor;
+  color: white;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+  }
+  span {
+    color: black;
+  }
+
+  @include mixins.mQ-other(769px, 1699px) {
+    font-size: 18px;
+    padding: 5px 10px;
+  }
+
+  @include mixins.mQ-largerDesktops(1700px) {
+    font-size: 18px;
+    padding: 5px 10px;
+  }
+}
+
+.legend-dnd {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  @include mixins.mQ-phones(480px) {
+    font-size: 0.8em;
+  }
+
+  @include mixins.mQ-other(769px, 1699px) {
+    font-size: 18px;
+  }
+
+  @include mixins.mQ-largerDesktops(1700px) {
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,101 @@
+@use '../../../../../styles/mixins.scss';
+@use '../../../../../styles/variables.scss';
+@use '../../shared.scss' as globalAuthShared;
+
+.sign-up-upload-picture-container {
+  margin-bottom: 50px;
+
+  @include mixins.mQ-phones(480px) {
+    margin-bottom: 20px;
+  }
+}
+
+.upload-picture-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border: 1px dashed black;
+  label {
+    width: 100%;
+    margin-bottom: 25px;
+
+    .selected-file {
+      margin-top: 25px;
+    }
+  }
+  input {
+    display: none;
+    justify-content: space-between;
+  }
+
+  .selected-file {
+    font-size: 0.6em;
+  }
+
+  @include mixins.mQ-phones(480px) {
+    font-size: 1em;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 80vw;
+    max-height: 200px;
+
+    label {
+      font-size: 1.1em;
+      margin-bottom: 5px;
+    }
+  }
+
+  @include mixins.mQ-other(481px, 768px) {
+    font-size: 1em;
+    margin-top: 30px;
+    width: 50vw;
+    max-height: 200px;
+  }
+
+  @include mixins.mQ-other(769px, 1149px) {
+    font-size: 1em;
+    margin-top: 30px;
+    width: 350px;
+    max-height: 200px;
+  }
+
+  @include mixins.mQ-other(1150px, 1699px) {
+    font-size: 1em;
+    margin-top: 30px;
+    width: 400px;
+    max-height: 200px;
+  }
+
+  @include mixins.mQ-other(1700px, 2299px) {
+    font-size: 1.1em;
+    margin-top: 30px;
+    width: 500px;
+    max-height: 250px;
+  }
+
+  @include mixins.mQ-largerDesktops(2299px) {
+    font-size: 1.5em;
+    margin-top: 50px;
+    width: 550px;
+    max-height: 300px;
+  }
+}
+
+.upload-icon-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  svg {
+    margin-top: 40px;
+    font-size: 2em;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.2);
+    }
+  }
+}
